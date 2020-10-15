@@ -1,0 +1,124 @@
+* {
+  background-color: black;
+  color: rgb(29, 209, 29);
+  font-family: Courier, 'Courier New', monospace;
+  font-weight: bold;
+  text-shadow: 0 0 5px greenyellow;
+}
+
+button {
+  display: none;
+  width: 180px;
+  padding: 20px 40px;
+  margin: 25px auto;
+  border: solid green;
+  font-size: 20px;
+}
+
+button:active {
+  border-color: black;
+  color: black;
+  background-color: rgb(29, 209, 29);
+}
+
+button:hover {
+  animation: blinker 3s linear infinite;
+}
+
+@keyframes blinker {  
+  50% { opacity: 0; }
+}
+
+textarea {
+  resize: vertical;
+}
+
+.content {
+  display: none;
+}
+
+.header {
+  grid-area: header;
+}
+
+.header2 {
+  grid-area: header2;
+}
+
+.menu {
+  grid-area: menu;
+  display: block;
+  padding: 25px;
+}
+
+.main {
+  grid-area: main;
+  padding: 25px;
+}
+
+.footer {
+  grid-area: footer;
+  padding: 10px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+  'header header2'
+  'menu main'
+  'menu footer';
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: auto auto 80px;
+  grid-gap: 2px;
+  padding: 2px;
+  background-color: rgb(29, 209, 29);
+  text-align: center;
+}
+
+.grid-container > div {
+  background-color: black;
+  font-size: 30px;
+}
+
+.projectDetails {
+  font-size: 20px;
+  color: white;
+  text-shadow: none;
+}
+
+.form {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  border: solid green;
+}
+
+#home {
+  display: block;
+}
+
+#skills li, #about li {
+  padding: 10px;
+  text-align: left;
+}
+
+#projects li{
+  list-style: none;
+}
+
+.external:hover {
+  animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {  
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#formButton {
+  margin: 0 auto;
+}

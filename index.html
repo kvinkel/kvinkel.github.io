@@ -1,1 +1,105 @@
-Hello World
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>kvinkel</title>
+  <link rel = "stylesheet" type="text/css" href="css/style.css">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+</head>
+<html>
+ <body>
+  <div class="grid-container">
+    <div class="header">
+      <h2>kvinkel</h2>
+    </div>
+    <div class="header2">
+      <h2 class="hs" id="title">Loading</h2>
+    </div>
+    <div class="menu">
+      <button class = "button" id="homeButton">Home</button>
+      <button class = "button" id="projectsButton">Projects</button>
+      <button class = "button" id="skillsButton">Skills</button>
+      <button class = "button" id="aboutButton">About</button>
+      <button class = "button" id="contactButton">Contact</button>
+    </div>
+    <div class="main">
+      
+      <div class="content" id="home">
+        <p id="homeText"></p>
+      </div>
+
+      <div class="content" id="projects">
+        <ul>
+          <li>
+            <h4>Static website: Portfolio</h4>
+            <p class="projectDetails">Website to showcase projects and skills<br/>Technologies used: HTML, CSS, JavaScript</p>
+          </li>
+          <li>
+            <h4>Raspberry Environment aPi</h4>
+            <p class="projectDetails">An api for monitoring local environment sensor data<br/>Technologies used: Python, Docker, SQLite</p>
+          </li>
+          <li>
+            <h4>Small Java game: Coin Flip</h4>
+            <p class="projectDetails">Text based Java game<br/>Technologies used: Java, Docker</p>
+          </li>
+          <li>More coming soon!</li>
+        </ul>
+      </div>
+
+      <div class="content" id="skills">
+        <ul>
+          <li>
+            Languages: Java <img src="resources/java-iconw.png" alt="Java" width="50" height="50">
+            C# <img src="resources/csharp-icon.png" alt="C#" width="50" height="50"> 
+            JavaScript <img src="resources/js-logow.png" alt="JavaScript" width="40" height="40">
+            CSS <img src="resources/CSS-icon.png" alt="CSS" width="50" height="50">
+            HTML <img src="resources/HTML-icon.png" alt="HTML" width="50" height="50">
+            Python <img src="resources/python-icon.png" width="50" height="50">
+            PHP <img src="resources/php-icon.png" height="30">
+          </li>
+          <li>Other: Android programming, JavaFX, Docker</li>
+          <li>Tools and IDEs: IntelliJ IDEA, Rider, Visual Studio Code, Netbeans, Scene Builder, Git</li>
+          <li>
+            Databases: PostgreSQL <img src="resources/PostgreSQL-icon.png" alt="PostgreSQL" width="50" height="50">
+            MariaDB <img src="resources/mariadb-icon.png" height="40">
+            SQlite <img src="resources/sqlite-icon.png" width="50" height="50">
+          </li>
+          <li>Project Tools: Scrum, Agile, Unified Process</li>
+          <li>OS: Windows, Linux</li>
+        </ul>
+      </div>
+
+      <div class="content" id="about">
+        <ul>
+          <li>Education: BEng Bachelor of Engineering in Software Technology from University of Southern Denmark. Currently on the fifth semester. (2018-2022)</li>
+        </ul>
+      </div>
+      
+      <div class="content" id="contact">
+        <form id="contactForm" target="_blank" method="POST">
+          <p>Name</p>
+          <input class='form' type="text" name="name">
+          <p>Email</p>
+          <input class='form' type="email" name="_replyto">
+          <p>Message</p>
+          <textarea class='form' name="message"></textarea>
+          <input type="hidden" name="_subject" value="Message via website">
+          <input type="text" name="_gotcha" style="display:none">
+          <br>
+          <button id="formButton" type="submit" value="Send" style="display: block;">Send</button>
+        </form>
+      </div>
+
+    </div>
+    
+    <div class="footer">
+      <a href="https://github.com/kvinkel" title="Github"><img class="external" src="resources/github-iconw.png" alt="Github" width="50" height="50"></a>
+      <a href="https://stackoverflow.com/users/11890876/kvinkel?tab=profile" title="Stack Overflow">
+        <img class="external" src="resources/so-iconw.png" alt="Stack Overflow" width="50" height="50"></a>
+      <a href="https://hub.docker.com/u/kvinkel" title="Docker Hub"><img class="external" src="resources/docker-icon.png" alt="Docker Hub" width="50" height="50"></a>
+    </div>
+  </div>
+  <script src="js/index.js"></script>
+ </body>
+</html>
