@@ -30,7 +30,37 @@ function writeIntro() {
     clearInterval(loadTitleInterval);
     title.innerHTML = 'Home';
     showElements('button');
+    showElement('raspApi')
   }
+}
+
+let pollTimeout;
+
+function pollSensorData() {
+  fetch('https://sixpenny-elk-9463.dataplicity.io/sensors')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response not ok!');
+      }
+      return response.json();
+    })
+    .then(data =>  {
+      document.getElementById('temp').innerHTML = data['temperature'].toPrecision(4);
+      document.getElementById('hum').innerHTML = data['humidity'].toPrecision(4);
+      document.getElementById('pres').innerHTML = data['pressure'].toPrecision(4);
+      document.getElementById('cpuTemp').innerHTML = data['cpu_temp'].toPrecision(4);
+    })
+    .then(() => {
+      pollTimeout = setTimeout(pollSensorData, 2000);
+    })
+    .catch(error => {
+      document.getElementById('raspApi').style.display = 'none';
+      console.log(error);
+    });
+}
+
+function showElement(id) {
+  document.getElementById(id).style.display = 'block';
 }
 
 function hideElements(className) {
@@ -38,29 +68,7 @@ function hideElements(className) {
   for (let i = 0; i < content.length; i++) {
     content[i].style.display = 'none';
   }
-}
-
-function showElement(id) {
-  document.getElementById(id).style.display = 'block';
-}
-
-let temp = document.getElementById("temp");
-let raspApi = document.getElementById("raspApi");
-
-function pollSensorData() {
-  fetch("https://sixpenny-elk-9463.dataplicity.io/sensors")
-    .then(response => {
-      if (!response.ok) {
-        throw new Error("Network response not ok!")
-      }
-      return response.json();
-    })
-    .then(data => temp.innerHTML = data["temperature"].toPrecision(4))
-    .then(() => setTimeout(pollSensorData, 5000))
-    .catch(error => {
-      raspApi.style.display = 'none';
-      console.log(error)
-    });
+  clearTimeout(pollTimeout);
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -68,7 +76,9 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('homeButton').addEventListener('click', function() {
     hideElements('content');
     showElement('home');
+    showElement('raspApi');
     title.innerHTML = 'Home';
+    pollSensorData();
   });
   document.getElementById('projectsButton').addEventListener('click', function() {
     hideElements('content');
