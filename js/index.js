@@ -44,6 +44,16 @@ function showElement(id) {
   document.getElementById(id).style.display = 'block';
 }
 
+let temp = document.getElementById("temp");
+
+function pollSensorData() {
+  fetch("https://sixpenny-elk-9463.dataplicity.io/sensors")
+    .then(response => response.json())
+    .then(data => temp.innerHTML = data["temperature"].toPrecision(4))
+    .then(() => setTimeout(pollSensorData, 5000))
+    .catch(error => console.log(error));
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   writeIntro();
   document.getElementById('homeButton').addEventListener('click', function() {
@@ -72,4 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
     title.innerHTML = 'Contact';
   });
   document.getElementById('contactForm').setAttribute('action', 'https://formspree.io' + '/xwkebjeo');
+
+  pollSensorData();
+
 });
