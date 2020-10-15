@@ -45,13 +45,22 @@ function showElement(id) {
 }
 
 let temp = document.getElementById("temp");
+let raspApi = document.getElementById("raspApi");
 
 function pollSensorData() {
   fetch("https://sixpenny-elk-9463.dataplicity.io/sensors")
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Network response not ok!")
+      }
+      return response.json();
+    })
     .then(data => temp.innerHTML = data["temperature"].toPrecision(4))
     .then(() => setTimeout(pollSensorData, 5000))
-    .catch(error => console.log(error));
+    .catch(error => {
+      raspApi.style.display = 'none';
+      console.log(error)
+    });
 }
 
 document.addEventListener('DOMContentLoaded', function() {
