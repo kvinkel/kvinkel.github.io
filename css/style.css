@@ -80,6 +80,10 @@ textarea {
   font-size: 30px;
 }
 
+.projectHeader {
+  text-decoration: none;
+}
+
 .projectDetails {
   font-size: 20px;
   color: white;
