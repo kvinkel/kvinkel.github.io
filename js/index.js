@@ -47,7 +47,7 @@ function pollSensorData() {
     .then(data =>  {
       document.getElementById('temp').innerHTML = data['temperature'].toPrecision(4);
       document.getElementById('hum').innerHTML = data['humidity'].toPrecision(4);
-      document.getElementById('pres').innerHTML = data['pressure'].toPrecision(4);
+      document.getElementById('pres').innerHTML = data['pressure'].toPrecision(6);
       document.getElementById('cpuTemp').innerHTML = data['cpu_temp'].toPrecision(4);
     })
     .then(() => {
