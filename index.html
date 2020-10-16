@@ -2,9 +2,8 @@
 <html lang="eng">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>kvinkel</title>
-  <link rel = "stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 </head>
 <html>
@@ -17,30 +16,37 @@
       <h2 class="hs" id="title">Loading</h2>
     </div>
     <div class="menu">
-      <button class = "button" id="homeButton">Home</button>
-      <button class = "button" id="projectsButton">Projects</button>
-      <button class = "button" id="skillsButton">Skills</button>
-      <button class = "button" id="aboutButton">About</button>
-      <button class = "button" id="contactButton">Contact</button>
+      <button class="button" id="homeButton">Home</button>
+      <button class="button" id="projectsButton">Projects</button>
+      <button class="button" id="skillsButton">Skills</button>
+      <button class="button" id="aboutButton">About</button>
+      <button class="button" id="contactButton">Contact</button>
     </div>
     <div class="main">
       
       <div class="content" id="home">
         <p id="homeText"></p>
+        <div class="content" id="raspApi">
+          <h4 id="apiHeader">Raspberry Environment aPi:</h4>
+          <p class="sensorReadings">Temperature: <span id="temp"></span> °C</p>
+          <p class="sensorReadings">Humidity: <span id="hum"></span>%</p>
+          <p class="sensorReadings">Pressure: <span id="pres"></span> hPa</p>
+          <p class="sensorReadings">CPU temp: <span id="cpuTemp"></span> °C</p>
+        </div>
       </div>
 
       <div class="content" id="projects">
         <ul>
           <li>
-            <h4>Static website: Portfolio</h4>
+            <h4><a class="projectHeader" href="https://github.com/kvinkel/kvinkel.github.io">Static website: Portfolio</a></h4>
             <p class="projectDetails">Website to showcase projects and skills<br/>Technologies used: HTML, CSS, JavaScript</p>
           </li>
           <li>
-            <h4>Raspberry Environment aPi</h4>
+            <h4><a class="projectHeader" href="https://github.com/kvinkel/raspberry-environment-api">Raspberry Environment aPi</a></h4>
             <p class="projectDetails">An api for monitoring local environment sensor data<br/>Technologies used: Python, Docker, SQLite</p>
           </li>
           <li>
-            <h4>Small Java game: Coin Flip</h4>
+            <h4><a class="projectHeader" href="https://github.com/kvinkel/coin-flip">Small Java game: Coin Flip</a></h4>
             <p class="projectDetails">Text based Java game<br/>Technologies used: Java, Docker</p>
           </li>
           <li>More coming soon!</li>
@@ -79,11 +85,11 @@
       <div class="content" id="contact">
         <form id="contactForm" target="_blank" method="POST">
           <p>Name</p>
-          <input class='form' type="text" name="name">
+          <input class="form" type="text" name="name">
           <p>Email</p>
-          <input class='form' type="email" name="_replyto">
+          <input class="form" type="email" name="_replyto">
           <p>Message</p>
-          <textarea class='form' name="message"></textarea>
+          <textarea class="form" name="message"></textarea>
           <input type="hidden" name="_subject" value="Message via website">
           <input type="text" name="_gotcha" style="display:none">
           <br>
@@ -94,10 +100,12 @@
     </div>
     
     <div class="footer">
-      <a href="https://github.com/kvinkel" title="Github"><img class="external" src="resources/github-iconw.png" alt="Github" width="50" height="50"></a>
+      <a href="https://github.com/kvinkel" title="Github">
+        <img class="external" src="resources/github-iconw.png" alt="Github" width="50" height="50"></a>
       <a href="https://stackoverflow.com/users/11890876/kvinkel?tab=profile" title="Stack Overflow">
         <img class="external" src="resources/so-iconw.png" alt="Stack Overflow" width="50" height="50"></a>
-      <a href="https://hub.docker.com/u/kvinkel" title="Docker Hub"><img class="external" src="resources/docker-icon.png" alt="Docker Hub" width="50" height="50"></a>
+      <a href="https://hub.docker.com/u/kvinkel" title="Docker Hub">
+        <img class="external" src="resources/docker-icon.png" alt="Docker Hub" width="50" height="50"></a>
     </div>
   </div>
   <script src="js/index.js"></script>

@@ -80,6 +80,10 @@ textarea {
   font-size: 30px;
 }
 
+.projectHeader {
+  text-decoration: none;
+}
+
 .projectDetails {
   font-size: 20px;
   color: white;
@@ -93,6 +97,10 @@ textarea {
   border: solid green;
 }
 
+.sensorReadings {
+  font-size: 25px;
+}
+
 #home {
   display: block;
 }
@@ -100,6 +108,11 @@ textarea {
 #skills li, #about li {
   padding: 10px;
   text-align: left;
+}
+
+#apiHeader {
+  color: white;
+  text-shadow: none;
 }
 
 #projects li{
