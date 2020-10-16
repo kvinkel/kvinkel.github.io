@@ -30,7 +30,8 @@ function writeIntro() {
     clearInterval(loadTitleInterval);
     title.innerHTML = 'Home';
     showElements('button');
-    showElement('raspApi')
+    showElement('raspApi');
+    pollSensorData();
   }
 }
 
@@ -72,6 +73,7 @@ function hideElements(className) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+
   writeIntro();
   document.getElementById('homeButton').addEventListener('click', function() {
     hideElements('content');
@@ -101,7 +103,5 @@ document.addEventListener('DOMContentLoaded', function() {
     title.innerHTML = 'Contact';
   });
   document.getElementById('contactForm').setAttribute('action', 'https://formspree.io' + '/xwkebjeo');
-
-  pollSensorData();
 
 });
