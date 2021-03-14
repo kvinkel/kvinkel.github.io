@@ -38,7 +38,7 @@ function writeIntro() {
 let pollTimeout;
 
 function pollSensorData() {
-  fetch('https://sixpenny-elk-9463.dataplicity.io/sensors')
+  fetch('https://allegiant-cichlid-1289.dataplicity.io/sensors')
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response not ok!');
@@ -56,7 +56,7 @@ function pollSensorData() {
     })
     .catch(error => {
       document.getElementById('raspApi').style.display = 'none';
-      console.log(error);
+      console.log(error.message);
     });
 }
 
