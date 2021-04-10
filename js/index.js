@@ -2,11 +2,11 @@ let title = document.getElementById('title');
 let i = 0;
 
 function loadTitle() {
-  if(i % 4 == 0) {
+  if (i % 4 == 0) {
     title.innerHTML = 'Loading';
   } else {
     title.innerHTML += '#';
-	}
+  }
   i++;
 }
 
@@ -22,7 +22,7 @@ let loadTitleInterval = setInterval(loadTitle, 500);
 let index = 0;
 
 function writeIntro() {
-  if(index < introText.length) {
+  if (index < introText.length) {
     document.getElementById('homeText').innerHTML += introText.charAt(index);
     index++;
     setTimeout(writeIntro, 60);
@@ -45,7 +45,7 @@ function pollSensorData() {
       }
       return response.json();
     })
-    .then(data =>  {
+    .then(data => {
       document.getElementById('temp').innerHTML = data['temperature'].toPrecision(4);
       document.getElementById('hum').innerHTML = data['humidity'].toPrecision(4);
       document.getElementById('pres').innerHTML = data['pressure'].toPrecision(6);
