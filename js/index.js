@@ -38,7 +38,7 @@ function writeIntro() {
 let pollTimeout;
 
 function pollSensorData() {
-  fetch('https://allegiant-cichlid-1289.dataplicity.io/sensors')
+  fetch('https://allegiant-cichlid-1289.dataplicity.io/sensors.php')
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response not ok!');
