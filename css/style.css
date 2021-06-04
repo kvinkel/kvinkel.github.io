@@ -33,6 +33,7 @@ button:hover {
 
 textarea {
   resize: vertical;
+  width: 30vw !important;
 }
 
 .content {
@@ -70,7 +71,7 @@ textarea {
     'menu main'
     'menu footer';
   grid-template-columns: 1fr 5fr;
-  grid-template-rows: auto auto 80px;
+  grid-template-rows: auto 1fr auto;
   grid-gap: 2px;
   padding: 2px;
   background-color: rgb(29, 209, 29);
@@ -103,6 +104,12 @@ textarea {
   font-size: 25px;
 }
 
+.noBullets {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 #home {
   display: block;
 }
@@ -116,10 +123,6 @@ textarea {
 #apiHeader {
   color: white;
   text-shadow: none;
-}
-
-#projects li {
-  list-style: none;
 }
 
 .external:hover {
@@ -137,4 +140,44 @@ textarea {
 
 #formButton {
   margin: 0 auto;
+}
+
+@media only screen and (max-width: 700px) {
+
+  img {
+    width: 9%;
+    height: auto;
+  }
+
+  button {
+    width: 100%;
+    padding: 10px 10px;
+    margin: 10px auto;
+    font-size: 10px;
+  }
+
+  .form {
+    width: auto;
+  }
+
+  .grid-container > div {
+    background-color: black;
+    font-size: 10px;
+  }
+
+  .projectDetails {
+    font-size: 10px;
+  }
+
+  .menu {
+    padding: 10px;
+  }
+
+  .sensorReadings {
+    font-size: 10px;
+  }
+
+  #formButton {
+    width: auto;
+  }
 }
