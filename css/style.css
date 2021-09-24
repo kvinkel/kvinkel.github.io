@@ -6,6 +6,10 @@
   text-shadow: 0 0 2px greenyellow;
 }
 
+img {
+  font-size: 0.8vw;
+}
+
 button {
   display: none;
   width: 180px;
