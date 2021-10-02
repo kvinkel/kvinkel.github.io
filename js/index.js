@@ -32,6 +32,7 @@ function writeIntro() {
     showElements('button');
     showElement('raspApi');
     pollSensorData();
+    updateGitHubContributionAmount();
   }
 }
 
@@ -56,6 +57,25 @@ function pollSensorData() {
     })
     .catch(error => {
       document.getElementById('raspApi').style.display = 'none';
+      console.log(error.message);
+    });
+}
+
+function updateGitHubContributionAmount() {
+  fetch('https://allegiant-cichlid-1289.dataplicity.io/contributions.php')
+    .then(response => {
+      if (!response.ok) {
+        throw Error(response.status + ' ' + response.statusText);
+      }
+      return response.json();
+    })
+    .then(data => {
+      let contributionsLi = document.getElementById('contributions');
+      contributionsLi.innerHTML = data['contributions'];
+      contributionsLi.style.display = null;
+    })
+    .catch(error => {
+      document.getElementById('contributions').style.display = 'none';
       console.log(error.message);
     });
 }
