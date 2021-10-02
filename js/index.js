@@ -37,9 +37,10 @@ function writeIntro() {
 }
 
 let pollTimeout;
-let isPollTimeOutCleared = true;
+let isPollTimeOutCleared = false;
 
 function pollSensorData() {
+  isPollTimeOutCleared = false;
   fetch('https://allegiant-cichlid-1289.dataplicity.io/sensors.php')
     .then(response => {
       if (!response.ok) {
@@ -55,7 +56,6 @@ function pollSensorData() {
     })
     .then(() => {
       pollTimeout = setTimeout(pollSensorData, 2000);
-      isPollTimeOutCleared = false;
     })
     .catch(error => {
       document.getElementById('raspApi').style.display = 'none';
