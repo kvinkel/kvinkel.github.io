@@ -36,6 +36,7 @@ function writeIntro() {
   }
 }
 
+let pollTimeout;
 let isPollTimeOutCleared = true;
 
 function pollSensorData() {
