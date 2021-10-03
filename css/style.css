@@ -120,7 +120,7 @@ textarea {
 
 #skills li,
 #about li {
-  padding: 10px;
+  padding-bottom: 10px;
   text-align: left;
 }
 
