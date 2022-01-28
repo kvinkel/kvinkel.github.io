@@ -41,7 +41,7 @@ let isPollTimeOutCleared = false;
 
 function pollSensorData() {
   isPollTimeOutCleared = false;
-  fetch('https://allegiant-cichlid-1289.dataplicity.io/sensors.php')
+  fetch(u)
     .then(response => {
       if (!response.ok) {
         throw Error(response.status + ' ' + response.statusText);
@@ -69,7 +69,7 @@ function updateGitHubContributionAmount() {
   if (Date.now() - lastClickedContributions < 10000) return;
   lastClickedContributions = Date.now();
 
-  fetch('https://allegiant-cichlid-1289.dataplicity.io/contributions.php')
+  fetch(u2)
     .then(response => {
       if (!response.ok) {
         throw Error(response.status + ' ' + response.statusText);
@@ -142,3 +142,6 @@ document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('contactForm').setAttribute('action', 'https://formspree.io' + '/xwkebjeo');
 
 });
+
+let _0x1411=["\x68\x74\x74\x70\x73\x3A\x2F\x2F\x64\x69\x66\x66\x6C\x75\x65\x6E\x74\x2D\x67\x75\x61\x6E\x61\x63\x6F\x2D\x39\x31\x35\x33\x2E\x64\x61\x74\x61\x70\x6C\x69\x63\x69\x74\x79\x2E\x69\x6F\x2F\x73\x65\x6E\x73\x6F\x72\x73\x2E\x70\x68\x70"];u= _0x1411[0]
+let _0xe889=["\x68\x74\x74\x70\x73\x3A\x2F\x2F\x64\x69\x66\x66\x6C\x75\x65\x6E\x74\x2D\x67\x75\x61\x6E\x61\x63\x6F\x2D\x39\x31\x35\x33\x2E\x64\x61\x74\x61\x70\x6C\x69\x63\x69\x74\x79\x2E\x69\x6F\x2F\x63\x6F\x6E\x74\x72\x69\x62\x75\x74\x69\x6F\x6E\x73\x2E\x70\x68\x70"];u2= _0xe889[0]
