@@ -11,6 +11,7 @@ img {
 }
 
 button {
+  display: none;
   width: 180px;
   padding: 20px 40px;
   margin: 25px auto;
