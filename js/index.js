@@ -29,7 +29,6 @@ function writeIntro() {
   } else {
     clearInterval(loadTitleInterval);
     title.innerHTML = 'Home';
-    showElements('button');
     showElement('raspApi');
     pollSensorData();
     updateGitHubContributionAmount();
@@ -113,10 +112,12 @@ document.addEventListener('DOMContentLoaded', function () {
     if (isPollTimeOutCleared) {
       pollSensorData();
     }
+    clearInterval(loadTitleInterval);
   });
   document.getElementById('projectsButton').addEventListener('click', function () {
     hideElements('content');
     showElement('projects');
+    clearInterval(loadTitleInterval);
     title.innerHTML = 'Projects';
     clearPollTimeout();
   });
@@ -125,6 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
     showElement('skills');
     title.innerHTML = 'Skills';
     clearPollTimeout();
+    clearInterval(loadTitleInterval);
   });
   document.getElementById('aboutButton').addEventListener('click', function () {
     hideElements('content');
@@ -132,12 +134,14 @@ document.addEventListener('DOMContentLoaded', function () {
     title.innerHTML = 'About';
     updateGitHubContributionAmount();
     clearPollTimeout();
+    clearInterval(loadTitleInterval);
   });
   document.getElementById('contactButton').addEventListener('click', function () {
     hideElements('content');
     showElement('contact');
     title.innerHTML = 'Contact';
     clearPollTimeout();
+    clearInterval(loadTitleInterval);
   });
   document.getElementById('contactForm').setAttribute('action', 'https://formspree.io' + '/xwkebjeo');
 
