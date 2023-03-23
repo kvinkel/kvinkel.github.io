@@ -53,6 +53,8 @@ function pollSensorData() {
       document.getElementById('hum').innerHTML = data['humidity'].toPrecision(4);
       document.getElementById('pres').innerHTML = data['pressure'].toPrecision(6);
       document.getElementById('cpuTemp').innerHTML = data['cpu_temp'].toPrecision(4);
+      document.getElementById('co2').innerHTML = data['eco2'];
+      document.getElementById('tvoc').innerHTML = data['tvoc'];
     })
     .then(() => {
       pollTimeout = setTimeout(pollSensorData, 2000);
