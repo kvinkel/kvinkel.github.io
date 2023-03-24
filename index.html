@@ -24,6 +24,7 @@
       <button class="button" id="skillsButton">Skills</button>
       <button class="button" id="aboutButton">About</button>
       <button class="button" id="contactButton">Contact</button>
+      <button class="button" id="snakeButton">Snake</button>
     </div>
     <div class="main">
 
@@ -124,6 +125,11 @@
         </form>
       </div>
 
+      <div class="content" id="snake">
+        <p id="score"></p>
+        <canvas id="canvas"></canvas>
+        <p>Highscore for this play session: <span id="highScore">0</span></p>
+      </div>
     </div>
 
     <div class="footer">
@@ -135,6 +141,7 @@
         <img class="external" src="resources/docker-icon.png" alt="Docker Hub" width="50" height="50"></a>
     </div>
   </div>
-  <script src="js/index.js"></script>
+  <script type="module" src="js/snake.js"></script>
+  <script type="module" src="js/index.js"></script>
 </body>
 </html>

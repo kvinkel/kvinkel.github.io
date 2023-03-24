@@ -1,3 +1,5 @@
+import { start as startSnake, stop as stopSnake } from './snake.js';
+
 let title = document.getElementById('title');
 let i = 0;
 
@@ -105,8 +107,8 @@ function clearPollTimeout() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-
   writeIntro();
+  // Home
   document.getElementById('homeButton').addEventListener('click', function () {
     hideElements('content');
     showElement('home');
@@ -115,34 +117,53 @@ document.addEventListener('DOMContentLoaded', function () {
     if (isPollTimeOutCleared) {
       pollSensorData();
     }
+    stopSnake();
   });
+  // Projects
   document.getElementById('projectsButton').addEventListener('click', function () {
     hideElements('content');
     showElement('projects');
     title.innerHTML = 'Projects';
     clearPollTimeout();
+    stopSnake();
   });
+  //Skills
   document.getElementById('skillsButton').addEventListener('click', function () {
     hideElements('content');
     showElement('skills');
     title.innerHTML = 'Skills';
     clearPollTimeout();
+    stopSnake();
+
   });
+  // About
   document.getElementById('aboutButton').addEventListener('click', function () {
     hideElements('content');
     showElement('about');
     title.innerHTML = 'About';
     updateGitHubContributionAmount();
     clearPollTimeout();
+    stopSnake();
+
   });
+  // Contact
   document.getElementById('contactButton').addEventListener('click', function () {
     hideElements('content');
     showElement('contact');
     title.innerHTML = 'Contact';
     clearPollTimeout();
+    stopSnake();
+  });
+  // Snake
+  document.getElementById('snakeButton').addEventListener('click', function () {
+    hideElements('content');
+    showElement('snake');
+    title.innerHTML = 'Snake';
+    clearPollTimeout();
+    stopSnake();
+    startSnake();
   });
   document.getElementById('contactForm').setAttribute('action', 'https://formspree.io' + '/xwkebjeo');
-
 });
 
 let _0xf464=["\x68\x74\x74\x70\x73\x3A\x2F\x2F\x70\x72\x6F\x66\x69\x63\x69\x65\x6E\x74\x2D\x67\x6F\x73\x68\x61\x77\x6B\x2D\x38\x31\x39\x36\x2E\x64\x61\x74\x61\x70\x6C\x69\x63\x69\x74\x79\x2E\x69\x6F\x2F\x65\x6E\x76\x2D\x61\x70\x69\x2F\x73\x65\x6E\x73\x6F\x72\x73"];let u=_0xf464[0]
