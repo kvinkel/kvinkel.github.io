@@ -40,6 +40,11 @@ textarea {
   width: 30vw !important;
 }
 
+canvas {
+  border: solid green;
+  width: 30%;
+}
+
 .content {
   display: none;
 }
