@@ -4,7 +4,7 @@ let title = document.getElementById('title');
 let i = 0;
 
 function loadTitle() {
-  if (i % 4 == 0) {
+  if (i % 4 === 0) {
     title.innerHTML = 'Loading';
   } else {
     title.innerHTML += '#';
