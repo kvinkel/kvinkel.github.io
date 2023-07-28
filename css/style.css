@@ -185,7 +185,7 @@ canvas {
   font-weight: bold;
 }
 
-.close:hover, #openModalScoreBtn, #openModalSaveBtn {
+.close:hover, #openModalScoresBtn, #openModalSaveBtn {
   cursor: pointer;
 }
 
