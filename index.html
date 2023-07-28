@@ -127,7 +127,31 @@
       <div class="content" id="snake">
         <p id="score"></p>
         <canvas id="canvas"></canvas>
-        <p>Highscore for this play session: <span id="highScore">0</span></p>
+        <p>High Score for this play session: <span id="highScore">0</span></p>
+        <div>
+          <a class="button" id="openModalScoresBtn" title="High Scores" style="display: none; text-decoration-line: underline;">High Scores</a>
+        </div>
+        <br/>
+        <div>
+          <a class="button" id="openModalSaveBtn" title="Save High Score" style="display: none; text-decoration-line: underline;">Save Score</a>
+        </div>
+        <div id="scoresModal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closeScoresModal">&times;</span>
+                <h1>High Scores</h1>
+                <ul class="noBullets" id="highScoreList"></ul>
+            </div>
+        </div>
+        <div id="saveModal" class="modal">
+          <div class="modal-content">
+              <span class="close" id="closeSaveModal">&times;</span>
+              <h1>Save score</h1>
+              <label for="usernameInput">Enter username:</label>
+              <input class="form" style="margin-top: 10px;" type="text" id="usernameInput" maxlength="3">
+              <p>Score: <span id="scoreToSave">0</span></p>
+              <button id="saveButton">Save</button>
+          </div>
+        </div>
       </div>
     </div>
 

@@ -13,7 +13,7 @@ img {
 button {
   display: none;
   width: 180px;
-  padding: 20px 40px;
+  padding: 25px 40px 20px 40px;
   margin: 25px auto;
   border: solid green;
   font-size: 20px;
@@ -152,6 +152,41 @@ canvas {
 
 #formButton {
   margin: 0 auto;
+}
+
+#snake {
+  font-size: 20px;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  background-color: black;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid white;
+  width: 50%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover, #openModalScoreBtn, #openModalSaveBtn {
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 800px) {
